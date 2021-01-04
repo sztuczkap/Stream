@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+/*
         // 1. Strumień z kolekcji
         List<String> names = List.of("Ania", "Ola", "Tomek", "Adam");
         Stream<String> stream = names.stream();
@@ -26,7 +27,19 @@ public class Main {
         Stream<String> infinityStream = Stream.generate(() -> "repeat");
         Stream<Double> infinityRandomStream = Stream.generate(Math::random); // strumień nieskończonych liczb losowych
         Stream<BigInteger> infinitySequence = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE));  // nieskonczony ciąg 1,2,3...
+*/
 
+        // Metoda Filter
+        List<String> names = List.of("Ania", "Ola", "Tomek", "Adam");
+/*       for(String name : names){ // klasycznie za pomoca petli for
+           if(name.contains("a")){
+               System.out.println(name);
+           }
+       }*/
+
+        names.stream()
+                .filter(name -> name.contains("a"))
+                .forEach(System.out::println);
 
     }
 }
